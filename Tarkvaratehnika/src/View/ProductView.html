@@ -1,0 +1,62 @@
+<template>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="srylesheet" href="https://maxcdn.bootstrapcdn.com/3.3.7/css/bootstrap..min.css">
+<require from="Kujundus/kujundus.css"> </require>
+<title>Freebies</title>
+</head>
+
+<body>
+
+	<header>
+		<h2>Freebies</h2>
+	</header>
+
+	<nav>
+		<li><a href="index.html">Kõik</a></li>
+		<li><a href="minust.html">Aksessuaarid</a></li>
+		<li><a href="minust.html">Elektroonika</a></li>
+		<li><a href="friends.html">Kunst</a></li>
+		<li><a href="hobbies.html">Mööbel</a></li>
+		<li><a href="friends.html">Raamatud</a></li>
+		<li><a href="drawings.html">Riided</a></li>
+	</nav>
+
+	<article>
+		<div float="left">
+			<img src="https://s7d2.scene7.com/is/image/dkscdn/16NIKWPRNDYSTRPPYAPUA_Bright_Melon_Black_is" height="200" width="200">
+		</div>
+		<div width="25%" float="right" text-align="middle"><p>Nike Sports Bra</p>
+		<p>S</p>
+		<p>Mugav rinnahoidja treeningule</p>
+		<p>Tallinn</p>
+		
+		<input onclick="change()" type="button" value="Soovin" id="wish"></input>
+		
+	</div>
+	</article>
+	
+	
+
+	
+
+</body>
+<script>
+	function change(){
+		var elem = document.getElementById("wish");
+		
+	    if (elem.value=="Soovin") {
+	    	elem.value = "Broneeritud";
+	    	alert("Soov edastatud!");
+	    }
+	    else{
+	    	elem.value = "Soovin";
+	    	alert("Soov t�histatud!");
+	    }
+	}
+</script>
+<footer>Copyright &copy; Freebies</footer>
+</html>
+</template>
