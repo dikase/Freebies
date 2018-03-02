@@ -1,0 +1,46 @@
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+header, footer {
+    padding: 1em;
+    color: black;
+    background-color: pink;
+    clear: left;
+    text-align: center;
+}
+
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+.lisa{
+ font-size: 16px;
+ margin: 10px 5px;
+ padding: 15px 32px;
+}
+a+a {
+margin-left:20px;
+}
+
+input[type=text], select {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+.column.right{
+	width: 25%;
