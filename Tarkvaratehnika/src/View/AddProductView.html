@@ -5,37 +5,54 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="srylesheet" href="https://maxcdn.bootstrapcdn.com/3.3.7/css/bootstrap..min.css">
-<require from="Kujundus/kujundus.css"> </require>
-<title>Freebies</title>
-</head>
-
-<header>
-<h2>Freebies</h2>
-<a href="AddProductView.html">Lisa uus toode</a>
-<a href="ProductsView.html">Vaata kõiki tooteid</a>
-<a href="index.html">KKK</a>
-<a href="index.html">Kes me oleme?</a>
-</header>
-<body>
-<article>
-<img src="src/View/pildid/add.jpg" height="200" width="200"><p>
-Kategooria:<p>
-<select name="Kategooria">
-  <option value="koik">Kõik</option>
-  <option value="aksessuaarid">Aksessuaarid</option>
-  <option value="elektroonika">Elektroonika</option>
-  <option value="kunst">Kunst</option>
-  <option value="moobel">Mööbel</option>
-  <option value="raamatud">Raamatud</option>
-  <option value="riided">Riided</option>
-</select><p>
-Pealkiri:<p><input type="text" name="nimi"><p>
-Suurus:<p> <input type="text" name="suurus"><p>
-Kirjeldus: <p><input type="text" name="suurus"><p><p>
-Asukoht: <p><input type="text" name="asukoht"><p>
-<button class="lisa">Lisa</button>
-</article>
-</body>
-<footer>Lisainformatsioon</footer>
+    <require from="Kujundus/kujundus.css"></require>
+    </head>
+    <body>
+      <article>
+        <img src="src/View/pildid/add.jpg" height="200" width="200">
+        <p>
+          Kategooria:
+        <p>
+          <select value.bind=category name="Kategooria">
+            <option value="*">Kõik</option>
+            <option value="Accessories">Aksessuaarid</option>
+            <option value="Electronics">Elektroonika</option>
+            <option value="Art">Kunst</option>
+            <option value="Furniture">Mööbel</option>
+            <option value="Books">Raamatud</option>
+            <option value="Clothing">Riided</option>
+          </select>
+        <p>
+          Pealkiri:
+        <p><input type="text" name="pealkiri" value.bind="title">
+        <p>
+          Suurus:
+        <p><input type="text" name="suurus" value.bind="size">
+        <p>
+          Kirjeldus:
+        <p><input type="text" name="suurus" value.bind="description">
+        <p>
+        <p>
+          Asukoht:
+        <p><input type="text" name="asukoht" value.bind="location">
+        <p>
+          <button class="lisa" click.delegate="add()">Lisa</button>
+        <div repeat.for="p of products">
+          <h2>Product</h2>
+          <table>
+            <tr>
+              <td>${p.title}</td>
+              <td>${p.size}</td>
+              <td>${p.description}</td>
+              <td>${p.location}</td>
+              <td>${p.category}</td>
+            </tr>
+          </table>
+        </div>
+      </article>
+    </body>
+    <footer>Lisainformatsioon</footer>
 </html>
 </template>
+
+
