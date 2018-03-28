@@ -1,11 +1,12 @@
 package ee.ttu.freebies.model;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NonNull;
+import lombok.Setter;
 
 
-
-@Data
+@Getter
+@Setter
 public class Product {
    @NonNull Category category;
    @NonNull String title;

@@ -37,14 +37,14 @@
         <p><input type="text" name="asukoht" value.bind="location">
         <p>
           <button class="lisa" click.delegate="add()">Lisa</button>
+        <h2>Products</h2>
         <div repeat.for="p of products">
-          <h2>Product</h2>
           <table>
             <tr>
-              <td>${p.title}</td>
-              <td>${p.size}</td>
-              <td>${p.description}</td>
-              <td>${p.location}</td>
+              <td>${p.title},</td>
+              <td>${p.size},</td>
+              <td>${p.description},</td>
+              <td>${p.location},</td>
               <td>${p.category}</td>
             </tr>
           </table>

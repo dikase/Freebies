@@ -1,4 +1,5 @@
 import {HttpClient, json} from 'aurelia-fetch-client';
+import environment from '../environment';
 
 export class AddProductView {
   title = "";
@@ -14,7 +15,7 @@ export class AddProductView {
   }
 
   load_products(){
-    this.httpClient.fetch("http://localhost:8080/getProducts")
+    this.httpClient.fetch(environment.url + "getProducts")
       .then(response => response.json())
       .then(prs => this.products = prs);
   }
@@ -24,7 +25,7 @@ export class AddProductView {
       alert("Vali kategooria");
       return
     }
-    this.httpClient.fetch('http://localhost:8080/addProduct', {
+    this.httpClient.fetch(environment.url + "addProduct", {
       method: "POST",
       body: json({
       	category: this.category,
