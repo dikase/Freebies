@@ -1,18 +1,30 @@
 package ee.ttu.freebies.model;
 
-import lombok.Getter;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
-import lombok.Setter;
 
+import static javax.persistence.GenerationType.AUTO;
 
-@Getter
-@Setter
+@Entity
+@Data
 public class Product {
-   @NonNull Category category;
-   @NonNull String title;
-   @NonNull String description;
-   @NonNull String location;
-   @NonNull String size;
+    public Product(){
+    }
+    @Id
+    @GeneratedValue(strategy = AUTO)
+    long id;
+    @NonNull Category category;
+    @NonNull String title;
+    @NonNull String description;
+    @NonNull String location;
+    @NonNull String size;
 
     public enum Category { Accessories, Electronics, Art, Furniture, Books, Clothing;}
 }

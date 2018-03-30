@@ -1,35 +1,33 @@
 package ee.ttu.freebies;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
 
 import ee.ttu.freebies.model.Product;
+import ee.ttu.freebies.model.ProductRepository;
+
 
 @RestController
+@CrossOrigin //TODO: Remove in production
 public class HelloWorldController {
-   List<Product> products = new ArrayList<>();
+   private final ProductRepository repo;
 
-
-   @CrossOrigin
-   @RequestMapping("/")
-   public String sayHello() {
-      return "Hello Spring Boot!!";
+   @Autowired
+   public HelloWorldController(ProductRepository repo) {
+      this.repo = repo;
    }
 
-   @CrossOrigin
    @RequestMapping("/getProducts")
-   public List<Product> getProducts(){
-      return products;
+   public Iterable<Product> getProducts(){
+      return repo.findAll();
    }
 
-   @CrossOrigin
    @RequestMapping("/addProduct")
    public void addProduct(@RequestBody Product product){
-      products.add(product);
+      repo.save(product);
    }
 }

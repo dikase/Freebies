@@ -16,10 +16,10 @@ export class AddProductView {
 
   load_products(){
     this.httpClient.fetch(environment.url + "getProducts")
+    
       .then(response => response.json())
       .then(prs => this.products = prs);
   }
-
   add() {
     if (this.category === "*") {
       alert("Vali kategooria");
