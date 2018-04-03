@@ -1,35 +1,51 @@
+
 <template>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="srylesheet" href="https://maxcdn.bootstrapcdn.com/3.3.7/css/bootstrap..min.css">
-<require from="Kujundus/kujundus.css"> </require>
-<title>Freebies</title>
+  <style>
+    #container {
+      display: flex;
+    }
+    nav { flex-grow:0; }
+    article { flex-grow:1; }
+    ul {
+      display: inline-block;
+    }
 
-</head>
 
-<body>
+  </style>
+  <require from="./ProductView"></require>
 
-<nav>
-Kategooriad:
-<li><a href="#/ProductsView">Kõik</a></li>
-<li><a href="#/ProductsView">Elektroonika</a></li>
-<li><a href="#/ProductsView">Kunst</a></li>
-<li><a href="#/ProductsView">Mööbel</a></li>
-<li><a href="#/ProductsView">Raamatud</a></li>
-<li><a href="#/ProductView">Riided</a></li>
-</nav>
+  <div id="container">
+    <nav>
+      Kategooriad:
+      <ul>
+        <li><a href="#/ProductsView">Kõik</a></li>
+        <li><a href="#/ProductsView">Elektroonika</a></li>
+        <li><a href="#/ProductsView">Kunst</a></li>
+        <li><a href="#/ProductsView">Mööbel</a></li>
+        <li><a href="#/ProductsView">Raamatud</a></li>
+        <li><a href="#/ProductView">Riided</a></li>
+      </ul>
+    </nav>
 
-<article>
-<b><p><b>
-<img width="200"; src="src/View/pildid/toode1.jpg">
-<img width="200"; src="src/View/pildid/toode2.jpg">
-<img width="200"; src="src/View/pildid/toode3.jpg">
-<img width="200"; src="src/View/pildid/toode4.jpg">
-<img width="200"; src="src/View/pildid/toode5.jpg">
-</article>
-</body>
-</html>
+    <article>
+        <product-view repeat.for="p of products" product.bind="p"></product-view>
+    </article>
+  </div>
+  <!--
+  <img width="200" src="src/View/pildid/toode1.jpg">
+  <img width="200" src="src/View/pildid/toode2.jpg">
+  <img width="200" src="src/View/pildid/toode3.jpg">
+  <img width="200" src="src/View/pildid/toode4.jpg">
+  <img width="200" src="src/View/pildid/toode5.jpg">
+  <h3>Existing products:</h3>
+  <table>
+    <tr repeat.for="p of products">
+      <td>${p.title},</td>
+      <td>${p.size},</td>
+      <td>${p.description},</td>
+      <td>${p.location},</td>
+      <td>${p.category}</td>
+    </tr>
+  </table>
+  -->
 </template>
