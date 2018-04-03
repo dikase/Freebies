@@ -1,0 +1,51 @@
+
+<template>
+  <style>
+    #container {
+      display: flex;
+    }
+    nav { flex-grow:0; }
+    article { flex-grow:1; }
+    ul {
+      display: inline-block;
+    }
+
+
+  </style>
+  <require from="./ProductView"></require>
+
+  <div id="container">
+    <nav>
+      Kategooriad:
+      <ul>
+        <li><a href="#/ProductsView">Kõik</a></li>
+        <li><a href="#/ProductsView">Elektroonika</a></li>
+        <li><a href="#/ProductsView">Kunst</a></li>
+        <li><a href="#/ProductsView">Mööbel</a></li>
+        <li><a href="#/ProductsView">Raamatud</a></li>
+        <li><a href="#/ProductView">Riided</a></li>
+      </ul>
+    </nav>
+
+    <article>
+        <product-view repeat.for="p of products" product.bind="p"></product-view>
+    </article>
+  </div>
+  <!--
+  <img width="200" src="src/View/pildid/toode1.jpg">
+  <img width="200" src="src/View/pildid/toode2.jpg">
+  <img width="200" src="src/View/pildid/toode3.jpg">
+  <img width="200" src="src/View/pildid/toode4.jpg">
+  <img width="200" src="src/View/pildid/toode5.jpg">
+  <h3>Existing products:</h3>
+  <table>
+    <tr repeat.for="p of products">
+      <td>${p.title},</td>
+      <td>${p.size},</td>
+      <td>${p.description},</td>
+      <td>${p.location},</td>
+      <td>${p.category}</td>
+    </tr>
+  </table>
+  -->
+</template>
