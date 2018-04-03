@@ -7,39 +7,59 @@ export class AddProductView {
   description = "";
   location = "";
   category = "*";
-  httpClient = new HttpClient();
-  products = [];
 
   constructor() {
-    this.load_products();
+    this.httpClient = new HttpClient();
   }
 
-  load_products(){
-    this.httpClient.fetch(environment.url + "getProducts")
-    
-      .then(response => response.json())
-      .then(prs => this.products = prs);
+  stash(){
+    let stash = {
+      title: this.title,
+      size: this.size,
+      description: this.description,
+      location: this.location,
+      category: this.category,
+    };
+    this.title = "";
+    this.size = "";
+    this.description = "";
+    this.location = "";
+    this.category = "*";
+    return stash;
   }
+  unstash(stash){
+    this.title = stash.title;
+    this.size = stash.size;
+    this.description = stash.description;
+    this.location = stash.location;
+    this.category = stash.category;
+  }
+
   add() {
     if (this.category === "*") {
       alert("Vali kategooria");
       return
     }
+    let values = this.stash();
     this.httpClient.fetch(environment.url + "addProduct", {
       method: "POST",
       body: json({
-      	category: this.category,
-        title: this.title,
-        size: this.size,
-        description: this.description,
-        location: this.location      
+      	category: values.category,
+        title: values.title,
+        size: values.size,
+        description: values.description,
+        location: values.location
       })
     })
-      .then(() => {this.load_products()});
+      .then(data => {
+        alert("Toode lisatud =)") // TODO: Check if this works later
+      })
+      .catch(err => {
+        console.error(err);
+        this.unstash(values);
+      });
 
-
-    console.log("I was clicked");
-    console.log(this.title, this.size, this.description, this.location, this.category);
+    console.debug("Saving product:", this.title, this.size, this.description, this.location, this.category);
 
   }
 }

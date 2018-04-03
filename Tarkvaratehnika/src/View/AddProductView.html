@@ -1,14 +1,13 @@
 <template>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="srylesheet" href="https://maxcdn.bootstrapcdn.com/3.3.7/css/bootstrap..min.css">
-    <require from="Kujundus/kujundus.css"></require>
-    </head>
-    <body>
-      <article>
+  <style>
+    .my_addProductView {
+      padding: 2em;
+    }
+    .my_addProductView textarea{
+      width: 80%;
+    }
+  </style>
+      <div class="my_addProductView">
         <img src="src/View/pildid/add.jpg" height="200" width="200">
         <p>
           Kategooria:
@@ -30,7 +29,7 @@
         <p><input type="text" name="suurus" value.bind="size">
         <p>
           Kirjeldus:
-        <p><input type="text" name="suurus" value.bind="description">
+        <p><textarea type="text" rows=6 name="suurus" value.bind="description"></textarea>
         <p>
         <p>
           Asukoht:
@@ -38,20 +37,8 @@
         <p>
           <button class="lisa" click.delegate="add()">Lisa</button>
         <h2>Products</h2>
-        <div repeat.for="p of products">
-          <table>
-            <tr>
-              <td>${p.title},</td>
-              <td>${p.size},</td>
-              <td>${p.description},</td>
-              <td>${p.location},</td>
-              <td>${p.category}</td>
-            </tr>
-          </table>
-        </div>
-      </article>
-    </body>
-</html>
+
+      </div>
 </template>
 
 
