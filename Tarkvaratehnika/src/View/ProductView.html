@@ -1,57 +1,68 @@
-<template>
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="srylesheet" href="https://maxcdn.bootstrapcdn.com/3.3.7/css/bootstrap..min.css">
-<require from="Kujundus/kujundus.css"> </require>
-<title>Freebies</title>
-</head>
+<template bindable="product">
 
-<body>
+  <style>
+    .my_product {
+      position: relative;
+      overflow: hidden;
+    }
+    .my_product:not(.in_wishlist) .ribbon{
+      visibility: hidden;
+    }
+    .my_product .ribbon{
+      font-weight:bold;
+      /* https://codepen.io/eode9/pen/twkKm */
+      width: 200px;
+      background: #e43;
+      position: absolute;
+      top: 25px;
+      right: -50px;
+      text-align: center;
+      line-height: 50px;
+      letter-spacing: 1px;
+      color: #f0f0f0;
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+    .my_product {
+      display: inline-block;
+      margin: 1em;
+      border: 1px solid gray;
+      padding: 0.5em;
+    }
+    .details {
+      display: grid;
+      grid-template-areas:
+        "title title"
+        "cat size"
+        "desc desc"
+        "loc loc"
+    }
+    .title {grid-area: title;}
+    .cat {grid-area: cat;}
+    .size {grid-area: size;}
+    .desc {grid-area: desc;}
+    .loc {grid-area: loc;}
+  </style>
 
-<nav>
-Kategooriad:
-<li><a href="#/ProductsView">Kõik</a></li>
-<li><a href="#/ProductsView">Elektroonika</a></li>
-<li><a href="#/ProductsView">Kunst</a></li>
-<li><a href="#/ProductsView">Mööbel</a></li>
-<li><a href="#/ProductsView">Raamatud</a></li>
-<li><a href="#/ProductView">Riided</a></li>
-</nav>
+  <div class="my_product ${in_wishlist ? 'in_wishlist' : ''}">
+    <div class="ribbon">WISHLIST</div>
+    <div float="left">
+      <img src="https://picsum.photos/400/200/?image=${product.id}"
+           width="400" height="200">
+    </div>
+    <div class="details">
+      <h3 class="title">${product.title}</h3>
+      <p class="size">${product.size}</p>
+      <p class="desc">${product.description}</p>
+      <p class="loc">${product.location}</p>
+      <p class="cat">(${product.category})</p>
 
-	<article>
-		<div float="left">
-			<img src="https://s7d2.scene7.com/is/image/dkscdn/16NIKWPRNDYSTRPPYAPUA_Bright_Melon_Black_is" height="200" width="200">
-		</div>
-		<div width="25%" float="right" text-align="middle"><p>Nike Sports Bra</p>
-		<p>S</p>
-		<p>Mugav rinnahoidja treeningule</p>
-		<p>Tallinn</p>
-		
-		<input onclick="change()" type="button" class="lisa" value="Soovin" id="wish"></input>
-		
-	</div>
-	</article>
-	
-	
+      <input click.delegate="change($event.target)"
+             type="button"
+             class="lisa"
+             value.bind="in_wishlist ? 'Broneeritud' : 'Soovin'"
+             id="wish"/>
+    </div>
+  </div>
 
-	
-
-</body>
-<script>
-	function change(){
-		var elem = document.getElementById("wish");
-		
-	    if (elem.value=="Soovin") {
-	    	elem.value = "Broneeritud";
-	    	alert("Soov edastatud!");
-	    }
-	    else{
-	    	elem.value = "Soovin";
-	    	alert("Soov t�histatud!");
-	    }
-	}
-</script>
-</html>
 </template>
