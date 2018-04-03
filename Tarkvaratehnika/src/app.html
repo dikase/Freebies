@@ -1,6 +1,38 @@
 <template>
-<require from="navbar.html"></require>
-<navbar router.bind="router"></navbar>
-  <router-view></router-view>
-  <footer>Copyright &copy; Team Freebies</footer>
+  <style>
+    body {
+      margin: 0;
+    }
+    .my_app {
+      /* TODO: Figure out and fix this mess */
+      overflow-x: hidden;
+      height: 100vh;
+      display: grid;
+      grid-template-areas: "header"
+      "content"
+      "footer";
+      grid-template-rows: auto 10fr auto;
+    }
+    .my_app header { grid-area: header; }
+    .my_app footer { grid-area: footer; }
+    .my_app header, .my_app footer {
+      min-width: 100%;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .my_app router-view {
+      grid-area: content;
+      overflow-y: scroll;
+    }
+  </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/3.3.7/css/bootstrap..min.css">
+  <require from="Kujundus/kujundus.css"> </require>
+  <require from="navbar.html"></require>
+  <require from="header.html"></require>
+
+  <div class="my_app">
+    <header router="router"></header>
+    <router-view></router-view>
+    <footer>Copyright &copy; Team Freebies</footer>
+  </div>
 </template>
