@@ -28,8 +28,7 @@ export class Database {
         description: product.description,
         location: product.location,
         email: product.email,
-        password: product.password,
-        state: product.Available
+        password: product.password
       })
     })
   }
