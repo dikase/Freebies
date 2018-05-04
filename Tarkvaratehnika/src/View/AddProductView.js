@@ -6,6 +6,8 @@ export class AddProductView {
   size = "";
   description = "";
   location = "";
+  email="";
+  password="";
   category = "*";
 
   constructor() {
@@ -18,12 +20,16 @@ export class AddProductView {
       size: this.size,
       description: this.description,
       location: this.location,
+      email: this.email,
+      password: this.password,
       category: this.category,
     };
     this.title = "";
     this.size = "";
     this.description = "";
     this.location = "";
+    this.email = "",
+    this.password = "",
     this.category = "*";
     return stash;
   }
@@ -32,6 +38,8 @@ export class AddProductView {
     this.size = stash.size;
     this.description = stash.description;
     this.location = stash.location;
+    this.email = stash.email;
+    this.password = stash.password;
     this.category = stash.category;
   }
 
@@ -48,11 +56,13 @@ export class AddProductView {
         title: values.title,
         size: values.size,
         description: values.description,
-        location: values.location
+        location: values.location,
+        email: values.email,
+        password: values.password
       })
     })
       .then(data => {
-        alert("Toode lisatud =)") // TODO: Check if this works later
+        alert("Toode lisatud =)")
       })
       .catch(err => {
         console.error(err);
