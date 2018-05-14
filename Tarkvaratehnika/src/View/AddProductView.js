@@ -48,6 +48,22 @@ export class AddProductView {
       alert("Vali kategooria");
       return
     }
+    if (this.title === "") {
+        alert("Sisesta pealkiri");
+        return
+      }
+    if (this.size === "") {
+        alert("Sisesta suurus");
+        return
+      }
+
+    if (this.location === "") {
+        alert("Sisesta asukoht");
+        return
+      }
+ 
+    
+ 
     let values = this.stash();
     this.httpClient.fetch(environment.url + "addProduct", {
       method: "POST",
