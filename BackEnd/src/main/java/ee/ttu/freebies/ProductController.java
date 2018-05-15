@@ -1,11 +1,14 @@
 package ee.ttu.freebies;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -45,6 +48,11 @@ public class ProductController {
       return product.getEmail();
    }
 
+   @RequestMapping(value="/{category}", method=RequestMethod.GET)
+  	public List<Product> getProductsBySubcategory(@PathVariable("category") String category) {
+		return repo.findAllByCategory(category);
+  	}
+   
    @RequestMapping("/republishProduct")
    public Product republishProduct(@RequestBody Product.Ticket ticket){
       final Optional<Product> found = repo.findByIdAndState(ticket.getId(), Product.State.UnderNegotiation);
