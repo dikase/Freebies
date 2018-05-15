@@ -8,9 +8,7 @@
     }
   </style>
       <div class="my_addProductView">
-        <img src="src/View/pildid/add.jpg" height="200" width="200">
-        <p>
-          Kategooria:
+         <p> Kategooria:
         <p>
           <select value.bind=category name="Kategooria">
             <option value="*">Kõik</option>
@@ -24,6 +22,9 @@
         <p>
           Pealkiri:
         <p><input type="text" name="pealkiri" value.bind="title" required>
+        <p> Pildi URL:
+        <p><input type="text" name="pilt" value.bind="picture" required>
+        <p>(Kui ei ole pilti URLina, mine upload.ee ning lisa oma pilt sinna, saad vastu URLi mida siia lisada)
         <p>
           Suurus:
         <p><input type="text" name="suurus" value.bind="size" required>
@@ -39,9 +40,6 @@
           Email:
         <p><input type="text" name="email" value.bind="email">
         <p>
-        <p>
-          Password:
-        <p><input type="text" name="password" value.bind="password">
         <p>
           <button class="lisa" click.delegate="add()">Lisa</button>
 

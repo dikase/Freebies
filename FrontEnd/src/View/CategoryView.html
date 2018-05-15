@@ -1,0 +1,20 @@
+<template>
+  <style>
+    #container {
+      display: flex;
+    }
+    nav { flex-grow:0; }
+    article { flex-grow:1; }
+    ul {
+      display: inline-block;
+    }
+
+
+  </style>
+  <require from="./ProductView"></require>
+
+    <article>
+        <product-view repeat.for="p of products" product.bind="p"></product-view>
+    </article>
+  </div>
+</template>

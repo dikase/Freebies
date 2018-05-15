@@ -32,6 +32,7 @@ public class Product {
     @JsonView(PublicView.class) @Id @GeneratedValue(strategy = AUTO) long id;
     @JsonView(PublicView.class) @NonNull State state = State.Available;
     @JsonView(PrivateView.class) @NonNull String password = UUID.randomUUID().toString();
+    @JsonView(PrivateView.class) @NonNull String picture;
     @JsonView(PrivateView.class) @NonNull String email;
     @JsonView(PublicView.class) @NonNull Category category;
     @JsonView(PublicView.class) @NonNull String title;
