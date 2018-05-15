@@ -1,16 +1,19 @@
-
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
+}
 
 header, footer {
     padding: 1em;
     color: black;
-    background-color: #FFE4E1;
+    background-color: pink;
     clear: left;
     text-align: center;
 }
-nav { flex-grow:0; }
 
 article {
-    margin-left: 10px;
+    margin-left: 170px;
     border-left: 1px solid gray;
     padding: 1em;
     overflow: hidden;
@@ -20,15 +23,41 @@ article {
  margin: 10px 5px;
  padding: 15px 32px;
 }
+.kategooria:hover {
+    background-color: #ffeef1;
+    color: black;
+}
 .kategooria{
  font-size: 16px;
  margin: 10px 5px;
- padding: 7px 16px;
+ padding: 10px 50px;
+ width:200px;
  background-color:#fdd7dd;
  border-radius: 10px;
 }
+.picture1{
+	width:200px;
+	height:200px;
+	margin-left:100px;
+	 border-radius: 100px;
+}
+.picture2{
+	width:200px;
+	height:200px;
+	margin-left:100px;
+	 border-radius: 100px;
+}
+.picture3{
+	width:200px;
+	height:200px;
+	margin-left:100px;
+	 border-radius: 100px;
+}
 a+a {
-margin-left:15px;
+margin-left:20px;
+}
+.team{
+	text-align:center;
 }
 
 input[type=text], select, textarea {
@@ -43,4 +72,4 @@ input[type=text], select, textarea {
 
 
 .column.right{
-	width: 25%;
+	width: 15%;
