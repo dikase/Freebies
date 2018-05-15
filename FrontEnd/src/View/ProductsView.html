@@ -15,14 +15,14 @@
 
   <div id="container">
     <nav>
-      Kategooriad:
       <ul>
-        <li><a href="#/ProductsView">Kõik</a></li>
-        <li><a href="#/ProductsView">Elektroonika</a></li>
-        <li><a href="#/ProductsView">Kunst</a></li>
-        <li><a href="#/ProductsView">Mööbel</a></li>
-        <li><a href="#/ProductsView">Raamatud</a></li>
-        <li><a href="#/ProductView">Riided</a></li>
+      <button class = "kategooria" click.delegate="productsView('all')">Kõik</button><br>
+      <button class = "kategooria" click.delegate="productsView('accessories')">Aksessuaarid</button><br>
+      <button class = "kategooria" click.delegate="productsView('electronics')">Elektroonika</button><br>
+      <button class = "kategooria" click.delegate="productsView('art')">Kunst</button><br>
+      <button class = "kategooria" click.delegate="productsView('furniture')">Mööbel</button><br>
+      <button class = "kategooria" click.delegate="productsView('books')">Raamatud</button><br>
+      <button class = "kategooria" click.delegate="productsView('clothes')">Riided</button><br>
       </ul>
     </nav>
 

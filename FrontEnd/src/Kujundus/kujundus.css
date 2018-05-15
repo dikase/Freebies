@@ -23,6 +23,13 @@ article {
  margin: 10px 5px;
  padding: 15px 32px;
 }
+.kategooria{
+ font-size: 16px;
+ margin: 10px 5px;
+ padding: 7px 16px;
+ background-color:#fdd7dd;
+ border-radius: 10px;
+}
 a+a {
 margin-left:20px;
 }
@@ -36,6 +43,7 @@ input[type=text], select, textarea {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 
 .column.right{
 	width: 25%;

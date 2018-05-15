@@ -16,4 +16,7 @@ export class ProductsView{
       .then(response => response.json())
       .then(prs => this.products = prs);
   }
+  productsView(subcategory){
+      this.router.navigate(`ProductsView` +'/'+ subcategory);
+  }
 }
