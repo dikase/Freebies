@@ -35,7 +35,7 @@
         "title title"
         "cat size"
         "desc desc"
-        "loc loc"
+        "loc ema"
     }
     .title {grid-area: title;}
     .cat {grid-area: cat;}
@@ -48,21 +48,18 @@
     <div class="ribbon">WISHLIST</div>
     <div float="left">
       <img src=${product.picture}
-           width="400" height="200">
+           width="350" height="300">
     </div>
     <div class="details">
+   
       <h3 class="title">${product.title}</h3>
-      <p class="size">${product.size}</p>
-      <p class="desc">${product.description}</p>
-      <p class="loc">${product.location}</p>
-      <p class="cat">(${product.category})</p>
-      <p class="mail">${product.email}</p>
+      <p class="size">Suurus :<strong> ${product.size}</p></strong>
+      <p class="desc">Kirjeldus: <strong>${product.description}</p></strong>
+      <p class="loc">Asukoht: <strong>${product.location}</p></strong>
+      <p class="cat">Kategooria: <strong>(${product.category})</p></strong>
+      <p class="ema">Email: <strong>${product.email}</p></strong>
 
-      <input click.delegate="change($event.target)"
-             type="button"
-             class="lisa"
-             value.bind="in_wishlist ? 'Broneeritud' : 'Soovin'"
-             id="wish"/>
+
     </div>
   </div>
 
