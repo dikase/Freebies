@@ -49,7 +49,7 @@ public class ProductController {
    }
 
    @RequestMapping(value="/{category}", method=RequestMethod.GET)
-  	public List<Product> getProductsBySubcategory(@PathVariable("category") String category) {
+  	public List<Product> getProductsByCategory(@PathVariable("category") Product.Category category) {
 		return repo.findAllByCategory(category);
   	}
    
