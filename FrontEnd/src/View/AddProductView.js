@@ -65,8 +65,10 @@ export class AddProductView {
         alert("Sisesta asukoht");
         return
       }
- 
-    
+    if (this.email === "") {
+        alert("Sisesta email");
+        return
+      }
  
     let values = this.stash();
     this.httpClient.fetch(environment.url + "addProduct", {
