@@ -1,11 +1,41 @@
 
 <template bindable="router">
+	<style>
+	ul {
+	    list-style-type: none;
+	    margin: 15px;
+	    padding: 0;
+	    overflow: hidden;
+	}
+	
+	li {
+	    float: left;
+	}
+	ul {
+      display: inline-block;
+    }
+
+	
+	li a {
+	    display: block;
+	    color: #708090;
+	    text-align: center;
+	    padding: 14px 16px;
+	    text-decoration: none;
+	}
+	
+	li a:hover {
+	    background-color: #C0C0C0;
+	}
+	</style>
     <nav>
-      <h2><a href="/">Freebies</a></h2>
-      <a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Primary link</a>
-      <br><a href="/AddProductView">Lisa uus toode</a>
-      <br><a href="/ProductsView">Vaata kõiki tooteid</a>
-      <br><a href="/OurTeam">Kes me oleme?</a>
+    	<h2><a href="/">Freebies</a></h2>
+		<ul>
+		  <li><a href="/AddProductView">Lisa uus toode</a></li>
+		  <li><a href="/ProductsView">Vaata kõiki tooteid</a></li>
+		  <li><a href="/OurTeam">Kes me oleme?</a></li>
+		</ul>
+      
     </nav>
 </template>
 

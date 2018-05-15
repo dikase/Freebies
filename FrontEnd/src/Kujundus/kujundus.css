@@ -1,16 +1,13 @@
-a:link {
-    color: black;
-    background-color: transparent;
-    text-decoration: underline;
-}
+
 
 header, footer {
     padding: 1em;
     color: black;
-    background-color: pink;
+    background-color: #FFE4E1;
     clear: left;
     text-align: center;
 }
+nav { flex-grow:0; }
 
 article {
     margin-left: 170px;
