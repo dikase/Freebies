@@ -29,4 +29,8 @@ export class CategoryView
 			console.log(this.products);
 			
 		}
+		  productsView(category){
+		      this.router.navigate(`CategoryView` +'/'+ category);
+		  }
+		  
 }

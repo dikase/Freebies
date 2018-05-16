@@ -8,10 +8,8 @@ header, footer {
     clear: left;
     text-align: center;
 }
-
 article {
-    margin-left: 10px;
-    
+    margin:0 auto;
     padding: 1em;
     overflow: hidden;
 }

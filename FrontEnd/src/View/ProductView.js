@@ -9,6 +9,6 @@ export class ProductView{
     alert(this.in_wishlist ? "Soov edastatud!" : "Soov tühistatud!");
   }
   sendEmail(email){
-	  window.alert("Saada meil : "+email);
+	  window.alert("Kontakteeru : "+email);
 	  }
 }

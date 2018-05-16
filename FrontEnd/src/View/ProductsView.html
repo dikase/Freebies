@@ -3,9 +3,15 @@
     #container {
       display: flex;
     }
-    nav { flex-grow:0; }
+    #fixed{
+    position:fixed;
+    }
+
     ul {
       display: inline-block;
+      
+    }
+    article{margin-left:200px;
     }
 
 
@@ -14,13 +20,13 @@
 
   <div id="container">
     <nav>
-      <ul>
+      <ul id="fixed">
       <button class = "kategooria" click.delegate="productsView('Accessories')">Aksessuaarid</button><br>
       <button class = "kategooria" click.delegate="productsView('Electronics')">Elektroonika</button><br>
       <button class = "kategooria" click.delegate="productsView('Art')">Kunst</button><br>
       <button class = "kategooria" click.delegate="productsView('Furniture')">Mööbel</button><br>
       <button class = "kategooria" click.delegate="productsView('Books')">Raamatud</button><br>
-      <button class = "kategooria" click.delegate="productsView('Clothes')">Riided</button><br>
+      <button class = "kategooria" click.delegate="productsView('Clothing')">Riided</button><br>
       </ul>
     </nav>
 

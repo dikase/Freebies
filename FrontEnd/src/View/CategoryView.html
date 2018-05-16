@@ -3,16 +3,30 @@
     #container {
       display: flex;
     }
-    nav { flex-grow:0; }
-    article { flex-grow:1; }
+    nav { flex-grow:0;
+ }
+    article{margin-left:200px;
+    }
     ul {
       display: inline-block;
+    }
+     #fixed{
+    position:fixed;
     }
 
 
   </style>
   <require from="./ProductView"></require>
-
+    <nav>
+      <ul id="fixed">
+      <button class = "kategooria" click.delegate="productsView('Accessories')">Aksessuaarid</button><br>
+      <button class = "kategooria" click.delegate="productsView('Electronics')">Elektroonika</button><br>
+      <button class = "kategooria" click.delegate="productsView('Art')">Kunst</button><br>
+      <button class = "kategooria" click.delegate="productsView('Furniture')">Mööbel</button><br>
+      <button class = "kategooria" click.delegate="productsView('Books')">Raamatud</button><br>
+      <button class = "kategooria" click.delegate="productsView('Clothing')">Riided</button><br>
+      </ul>
+    </nav>
     <article>
         <product-view repeat.for="p of products" product.bind="p"></product-view>
     </article>
