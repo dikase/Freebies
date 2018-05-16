@@ -86,6 +86,7 @@ export class AddProductView {
     })
       .then(data => {
         alert("Toode lisatud =)")
+        window.location.href = "http://localhost:9000/ProductsView";
       })
       .catch(err => {
         console.error(err);
