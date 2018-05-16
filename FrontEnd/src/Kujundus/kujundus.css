@@ -1,4 +1,6 @@
-
+header {
+	 height: 156px;
+}
 header, footer {
     padding: 1em;
     color: black;
@@ -33,21 +35,25 @@ article {
 .picture1{
 	width:200px;
 	height:200px;
-	margin-left:100px;
+	margin-left:180px;
+	display: inline-block;
 	 border-radius: 100px;
 }
 .picture2{
 	width:200px;
 	height:200px;
-	margin-left:100px;
+	margin-left:150px;
+	display: inline-block;
 	 border-radius: 100px;
 }
 .picture3{
 	width:200px;
 	height:200px;
-	margin-left:100px;
+	margin-left:170px;
+	display: inline-block;
 	 border-radius: 100px;
 }
+
 a+a {
 margin-left:15px;
 }
