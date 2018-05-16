@@ -8,6 +8,14 @@ header, footer {
     clear: left;
     text-align: center;
 }
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.grid-item {
+  padding: 10px;
+  text-align: center;
+}
 article {
     margin:0 auto;
     padding: 1em;
