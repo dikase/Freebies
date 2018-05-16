@@ -4,7 +4,7 @@ header {
 header, footer {
     padding: 1em;
     color: black;
-    background-color: pink;
+    background-color: #D8BFD8;
     clear: left;
     text-align: center;
 }
