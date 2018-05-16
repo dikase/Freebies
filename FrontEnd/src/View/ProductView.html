@@ -57,7 +57,7 @@
       <p class="desc">Kirjeldus: <strong>${product.description}</p></strong>
       <p class="loc">Asukoht: <strong>${product.location}</p></strong>
       <p class="cat">Kategooria: <strong>(${product.category})</p></strong>
-      <p class="ema">Email: <strong>${product.email}</p></strong>
+      <button click.delegate="sendEmail(product.email)">Soovin</button>
 
 
     </div>
